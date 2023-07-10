@@ -14,23 +14,17 @@ build:
 yarn/create:
 	$(dc) yarn create react-app . --template typescript
 
-yarn/remove-module:
-	rm -rf frontend/node_modules
-	rm -rf frontend/package-lock.json
-
 yarn/init:
-	make yarn/remove-module
 	$(dc) yarn install
 	make yarn/start
 
 yarn/install:
 	make yarn/stop
-	make yarn/remove-module
 	$(dc) yarn install
 	make yarn/start
 
 yarn/start:
-	$(dc) yarn run start
+	$(dc) yarn start
 
 ps:
 	$(dc) ps aux
